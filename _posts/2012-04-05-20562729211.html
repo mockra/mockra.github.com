@@ -1,0 +1,18 @@
+---
+layout: post
+title: Testing Rails 3.1 Basic Auth
+---
+
+<p>Testing <code>http_basic_authenticate_with</code> is pretty simple. When testing successful tests, you&#8217;ll want to &#8216;login&#8217; first. This can be done with the following code.</p>
+
+<pre class- rb>
+
+request.env['HTTP_AUTHORIZATION'] =
+
+  ActionController::HttpAuthentication::Basic
+
+    .encode_credentials( name, password )
+
+</pre>
+
+<p>I&#8217;d recommend adding this to a support method as well.</p>

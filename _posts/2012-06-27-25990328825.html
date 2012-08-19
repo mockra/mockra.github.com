@@ -1,0 +1,96 @@
+---
+layout: post
+title: Zsh
+---
+
+<p>If you&#8217;re currently using the bash shell and looking for some additional features, I&#8217;d highly recommend Zsh. Zsh is a shell that&#8217;s very similar to bash; however, it offers a number of improvements and support for very useful plugins.</p>
+
+<p>If you want to switch to Zsh, the Oh My Zsh framework is a great tool for getting started. You can find the project on <a href="https://github.com/robbyrussell/oh-my-zsh/">Github</a>. It offers a wide range of plugins and themes that you can use to customize your shell.</p>
+
+<p>Configuration for Zsh is done in the <code>~/.zshrc</code> file. In this file you can customize your theme, as well as plugins that you want to load. Here&#8217;s an example:</p>
+
+<pre class="prettyprint">
+
+# Path to your oh-my-zsh configuration.
+
+ZSH=$HOME/.oh-my-zsh
+
+
+
+# Set name of the theme to load.
+
+# Look in ~/.oh-my-zsh/themes/
+
+# Optionally, if you set this to "random", it'll load a random theme each
+
+# time that oh-my-zsh is loaded.
+
+ZSH_THEME="wedisagree"
+
+
+
+# Example aliases
+
+# alias zshconfig="mate ~/.zshrc"
+
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+
+
+# Set to this to use case-sensitive completion
+
+# CASE_SENSITIVE="true"
+
+
+
+# Comment this out to disable weekly auto-update checks
+
+# DISABLE_AUTO_UPDATE="true"
+
+
+
+# Uncomment following line if you want to disable colors in ls
+
+# DISABLE_LS_COLORS="true"
+
+
+
+# Uncomment following line if you want to disable autosetting terminal title.
+
+# DISABLE_AUTO_TITLE="true"
+
+
+
+# Uncomment following line if you want red dots to be displayed while waiting for completion
+
+# COMPLETION_WAITING_DOTS="true"
+
+
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+
+# Example format: plugins=(rails git textmate ruby lighthouse)
+
+plugins=(git bundler)
+
+
+
+source $ZSH/oh-my-zsh.sh
+
+
+
+# Customize to your needs...
+
+export PATH=/Users/mockra/.rbenv/shims:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin
+
+
+
+export NODE_PATH=/usr/local/lib/node_modules
+
+eval "$(rbenv init -)"
+
+</pre>
+
+<p>As you can see from my example file, I&#8217;m currently using the wedisagree theme, as well as the git and bundler plugins. You can find a listing of currently available <a href="https://github.com/robbyrussell/oh-my-zsh/wiki/Themes">themes</a> and <a href="https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins">plugins</a> on the Oh My Zsh Wiki.</p>

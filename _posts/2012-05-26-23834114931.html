@@ -1,0 +1,30 @@
+---
+layout: post
+title: Using Pow
+---
+
+<p>Now that I&#8217;ve got a couple of different applications that I work on from time to time, I&#8217;ve found Pow to be a great asset. It&#8217;s a tool for running multiple Rails servers at once on your development machine while eliminating the need for configuring your server ports and starting them up all the time.</p>
+
+<p>Getting the service up and running takes a matter of seconds, and more advanced usage documentation can be found <a href="http://pow.cx/manual">here</a>. To install Pow and set it up for one of your applications, use the following commands.</p>
+
+<pre>
+
+curl get.pow.cx | sh
+
+cd ~/.pow
+
+ln -s /path_to_your_rails_application app_name
+
+</pre>
+
+<p>Here&#8217;s an example using one of my applications.</p>
+
+<pre>
+
+cd ~/.pow
+
+ln -s ~/Documents/Rails/tangela tangela
+
+</pre>
+
+<p>I would then access my tangela application with this url: <code><a href="http://tangela.dev">http://tangela.dev</a></code>.</p>

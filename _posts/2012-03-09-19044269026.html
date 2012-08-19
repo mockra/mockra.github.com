@@ -1,0 +1,54 @@
+---
+layout: post
+title: Rails Nested Resources
+---
+
+<p>Here&#8217;s a quick run down on using nested resources in your Ruby on Rails applications. To get started, you&#8217;ll need to add the resources to your <code>routes.rb</code> file. For this example we&#8217;re going to look at lists and tasks.</p>
+
+<pre class="prettyprint rb">resources :lists do
+
+  resources :tasks
+
+end
+
+</pre>
+
+<p>That will set you up with the following routes and more:</p>
+
+<pre class="prettyprint rb">/lists/:id/tasks
+
+/lists/:id/tasks/new
+
+/lists/:id/tasks/:id
+
+new_list_task_path( @list )
+
+list_task_path( @list, @task )
+
+</pre>
+
+<p>Nested routes are a great way to clean up URLs, as well as provide parameters for your controllers. If we use <code>new_list_task_path( @list )</code>, we can do the following in our controller:</p>
+
+<pre class="prettyprint rb">before_filter :list, on: [ :new ]
+
+
+
+def new
+
+  @task = @list.tasks.build
+
+end
+
+
+
+def list
+
+  @list = current_user.lists.find_by_id( params[:list_id] )
+
+  redirect_to new_user_url if @list.nil?
+
+end
+
+</pre>
+
+<p>Our new routes are passing the <code>:list_id</code> to our controller, which allows us to authenticate the current_user and build the new task quickly and easily.</p>
