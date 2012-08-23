@@ -1,0 +1,18 @@
+---
+layout: post
+title: Using Rake for Cron Jobs
+---
+
+<p>Rake is a great tool in general, and can even be used for running cron jobs. You can use Ruby&#8217;s Time class to create rules for when you want your tasks to be run. Here&#8217;s an example of how you can setup your <code>lib/tasks/cron.rake</code> file.</p>
+
+
+
+<p><a href="https://gist.github.com/3355894"><a href="https://gist.github.com/3355894">https://gist.github.com/3355894</a></a></p>
+
+
+
+<p>You can then setup crontab to run your rake file every hour, or however often you choose. Here&#8217;s an example for setting up crontab to run your file every hour:</p>
+
+
+
+<p><code>0 * * * * bash -c 'cd rails_path; bundle exec rake cron'</code></p>

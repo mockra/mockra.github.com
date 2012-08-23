@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="/css/default.css" type="text/css" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <header class="hero-unit span12">
+          <div class="row-fluid">
+            <div class="span8">
+              <h1>Mockra</h1>
+              <p>This is the blog of David Ratajczak, a Ruby on Rails developer.</p>
+            </div>
+            <div class="span4">
+              <ul class="pull-right">
+                <li>
+                  <a class="btn btn-success" href="http://github.com/mockra">Github</a>
+                </li>
+                <li>
+                  <a class="btn btn-info" href="http://twitter.com/mockra_">Twitter</a>
+                </li>
+                <li>
+                  <a class="btn btn-warning" href="mailto:david@mockra.com">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </header>
+      </div>
+      {{ content }}
+    </div>
+  </body>
+</html>
