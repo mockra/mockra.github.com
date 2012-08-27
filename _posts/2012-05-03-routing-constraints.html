@@ -1,0 +1,22 @@
+---
+layout: post
+title: Routing Constraints
+---
+
+<p>Here&#8217;s what I&#8217;m using to redirect visitors to different root_urls depending on whether or not they&#8217;re signed in.</p>
+
+<pre class="prettyprint rb">
+
+class UserConstraint
+  def matches?( request )
+    !request.cookies['auth_token'].blank?
+  end
+end
+
+  root to: 'projects#index', constraints:
+    UserConstraint.new
+
+  root to: 'users#new'
+</pre>
+
+<p>I&#8217;m storing the user&#8217;s auth_token in <code>cookies[:auth_token]</code>, so you may need to edit the code slightly accordingly.</p>

@@ -2,30 +2,29 @@
 layout: default
 title: Mockra
 ---
-  {% for post in site.posts limit: 10 %}
-  <div class="row-fluid">
-    <div class="content span7 offset1">
+<div class="posts">
+  {% for post in site.posts limit: 6 %}
+  <div class="row-fluid post">
+    <div class="content span8 offset1">
+      <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+      <br />
       {{ post.content }}
     </div>
-    <div class="title span3">
+    <div class="title span2">
       <blockquote>
-        <a href="{{ post.url }}">{{ post.title }}</a>
+        <a href="{{ post.url }}">{{ post.date | date_to_string }}</a>
         <br />
-        {{ post.date | date_to_string }}
-        <br /><D-r>
-        <a href="https://twitter.com/share" class="twitter-share-button"
-          data-url="{{ post.url }}" data-via="Mockra_">Tweet</a>
+        <div class="twitter">
+          <a href="https://twitter.com/share" class="twitter-share-button"
+            data-url="{{ post.url }}" data-via="Mockra_">Tweet</a>
+        </div>
       </blockquote>
     </div>
   </div>
   {% endfor %}
-  <!-- Move to archives page
-  {% for post in site.posts offset: 10 %}
-    {{ post.title }}
-  {% endfor %}
-  -->
- <script>
-!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
-  if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";
-    fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
- </script>
+  <div class="row-fluid">
+    <div class="archives span2 offset5">
+      <button class="btn btn-mini" href="/archives.html">View More</button>
+    </div>
+  </div>
+</div>

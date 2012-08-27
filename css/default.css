@@ -1,5 +1,9 @@
+@import url(http://fonts.googleapis.com/css?family=Plaster);
+@import url(http://fonts.googleapis.com/css?family=Quantico);
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans+Mono);
+
 body {
-  margin: 30px 75px 50px;
+  margin: 30px 75px 0;
 }
 
 header ul {
@@ -9,4 +13,73 @@ header ul {
 
 header li {
   padding: 4px;
+}
+
+.post {
+  margin-bottom: 32px;
+}
+
+p {
+  font-family: 'Quantico', sans-serif;
+  color: gray;
+}
+
+pre {
+  font-family: 'Droid Sans Mono', sans-serif;
+}
+
+h3 {
+ margin: 0;
+ padding: 0;
+ line-height: 0;
+}
+
+.posts {
+  margin: 8px;
+}
+
+.twitter {
+  margin-top: 3px;
+}
+
+.hero-unit {
+  background:  rgba(85, 85, 85, 0.15);
+}
+
+.hero-unit p {
+    padding-top: 12px;
+    color: #999999;
+    width: 550px;
+}
+
+.hero-unit h1 {
+  color: #c3325f;
+  font-family: 'Plaster', cursive;s
+}
+
+.hero-unit h1 a {
+  color: #c3325f;
+}
+
+.hero-unit h1 a:hover {
+  color: #c3325f;
+  text-decoration: none;
+}
+
+h3 a {
+  color: #c3325f;
+}
+
+h3 a:hover {
+  color: #c3325f;
+}
+
+.post small {
+  float: right;
+  margin: 20px;
+  color: #E3DEE0;
+}
+
+.archive a {
+  text-align: center;
 }

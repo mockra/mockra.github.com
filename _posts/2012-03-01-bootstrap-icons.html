@@ -1,0 +1,12 @@
+---
+layout: post
+title: Bootstrap Icons as Links in Rails
+---
+
+<p>Using Bootstrap icon sprites with the Rails link_to helper is really simple. Here&#8217;s an example using haml:</p>
+
+<pre class="prettyprint haml">
+= link_to list_path( list ), method: :delete do
+  %i.icon-remove
+end
+</pre>

@@ -1,0 +1,20 @@
+---
+layout: post
+title: FactoryGirl @attr
+---
+
+<p>If you&#8217;re tired of having to declare <code>@attr</code> in your tests, then FactoryGirl has you covered. Once you have the <code>gem 'factory_girl_rails'</code> installed, you simply needed to add the following line to your <code>spec_helper.rb.</code></p>
+
+<pre class="prettyprint rb">
+  config.include Factory::Syntax::Methods
+</pre>
+
+<p>You can then setup your tests as such:</p>
+
+<pre class="prettyprint rb">
+it 'should create a user' do
+  lambda do
+    post :create, user: attributes_for( :user )
+  end.should change( User, :count ).by 1
+end
+</pre>

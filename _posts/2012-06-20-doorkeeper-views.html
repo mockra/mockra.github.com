@@ -1,0 +1,24 @@
+---
+layout: post
+title: Doorkeeper Views
+---
+
+<p>Doorkeeper is a great tool for quickly creating an OAuth based API. Information on setting up Doorkeeper can be found on the Github page <a href="https://github.com/applicake/doorkeeper">here</a>.</p>
+
+<p>Once you setup Doorkeeper, you&#8217;re more than likely going to want to customize the layout of the application. If you want full control over the views, run <code>rails generate doorkeeper:views</code>. Most of the time, the default views will work for your application and you&#8217;ll simply want to change the layout.</p>
+
+<p>Changing the Doorkeeper layout can be done in <code>config/application.rb</code>. Here&#8217;s how you can change the layout for all of your Doorkeeper views.</p>
+
+<pre class="prettyprint rb">
+config.to_prepare do
+
+  Doorkeeper::ApplicationController.layout "name_of_your_layout"
+
+end
+</pre>
+
+<p>You&#8217;ll then need to create the new layout that Doorkeeper will use. To access your applications named routes, you&#8217;ll need to preface them with main_app, here&#8217;s an example: <code>main_app.new_user_path</code>.</p>
+
+<p>When accessing Doorkeeper&#8217;s routes, such as applications_path and authorized_applications_path in the Doorkeeper layout, you won&#8217;t need to preface those routes.</p>
+
+<p>If you&#8217;re using Doorkeeper routes in your own application&#8217;s views, then you will need to preface them with doorkeeper. Here&#8217;s an example: <code>doorkeeper.applications_path</code></p>

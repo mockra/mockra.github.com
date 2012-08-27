@@ -1,0 +1,45 @@
+---
+layout: post
+title: Javascript Testing with RSpec and Capybara
+---
+
+<p>Setting up javascript testing with Capybara can be done in a few steps. Unfortunately transactional fixtures aren&#8217;t compatible with Selenium, the tool Capybara uses for JS testing. To circumvent this issue, you&#8217;ll need to disable transactional fixtures in your <code>spec_helper.rb</code>. You&#8217;ll also want to use a tool like database_cleaner.</p>
+
+<p>To get everything setup for Capybara, you&#8217;ll want to include <code>gem 'database_cleaner'</code> in your Gemfile. Add the following lines to your spec_helper file as well.</p>
+
+<pre class="prettyprint rb">
+DatabaseCleaner.strategy = :truncation
+
+RSpec.configure do |config|
+  config.use_transactional_fixtures = false
+  config.before(:each) { DatabaseCleaner.start }
+  config.after(:each) { DatabaseCleaner.clean }
+end
+</pre>
+
+<p>You can then setup your specs as follows to start testing javascript. You&#8217;ll also need Firefox installed by default, but I&#8217;ll go over the appropriate steps for setting up your environment for Chrome as well.</p>
+
+<pre class="prettyprint rb">
+require 'spec_helper'
+
+describe "Articles" do
+  describe 'new', js: true do
+  end
+end
+</pre>
+
+<p>Setting up Selenium to use Chrome requires that you add the following configuration to the bottom of your spec_helper.</p>
+
+<pre class="prettyprint rb">
+Capybara.register_driver :selenium do |app|
+  Capybara::Selenium::Driver.new(app, :browser =&gt; :chrome)
+end
+</pre>
+
+<p>You&#8217;ll also need to download the ChromeDriver server, which can be found <a href="http://code.google.com/p/chromedriver/downloads/list">here</a>. Once you download the appropriate file, you need to add it to your path. The following terminal command will work for OS X users.</p>
+
+<pre class="prettyprint">
+mv ~/Downloads/chromedriver /usr/local/bin/
+</pre>
+
+<p>When you run your tests that require javascript, a Chrome window will open and run the specs now. Good luck testing!</p>

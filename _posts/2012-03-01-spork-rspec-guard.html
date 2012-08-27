@@ -1,0 +1,84 @@
+---
+layout: post
+title: Spork, RSpec, and Guard
+---
+
+<p>Spork is a great tool for saving time when it comes to testing your Rails application. Normally when tests are run, you need to wait for the Rails application to load. Spork will cut out that delay.</p>
+
+<p>Adding Spork support for RSpec and Guard is pretty simple, to get started add the following gems to your Gemfile:</p>
+
+<pre class="prettyprint rb">
+group :test do
+  gem 'spork'
+  gem 'guard-spork'
+end
+</pre>
+
+<p>Make sure you run the <code>bundle</code> command, and you&#8217;re now ready to set up your Spork install. Enter <code>spork --bootstrap</code> into the terminal to add Spork to your spec_helper.rb file. You&#8217;ll then need to edit your spec_helper file and place most of your code into Spork.prefork.</p>
+
+<p>Here&#8217;s an example spec_helper.rb file:</p>
+
+<pre class="prettyprint rb">
+require 'rubygems'
+require 'spork'
+
+Spork.prefork do
+  ENV["RAILS_ENV"] ||= 'test'
+  require File.expand_path("../../config/environment", __FILE__)
+  require 'rspec/rails'
+  require 'capybara/rspec'
+
+  Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
+
+  RSpec.configure do |config|
+    config.mock_with :rspec
+    config.use_transactional_fixtures = true
+    config.include Factory::Syntax::Methods
+    config.include UserMacros
+  end
+end
+
+Spork.each_run do
+end
+
+</pre>
+
+<p>If you&#8217;re using guard, you&#8217;ll want to run <code>bundle exec guard init spork</code> to add Spork to your guardfile. After you run the command, you need to edit your guardfile and place the Spork block at the top of the file. You&#8217;ll also want to add <code>cli: '--drb'</code> to guard &#8216;rspec&#8217;.</p>
+
+<p>Here&#8217;s an example guardfile:</p>
+
+<pre class="prettyprint rb">
+# A sample Guardfile
+# More info at <a href="https://github.com/guard/guard#readme">https://github.com/guard/guard#readme</a>
+
+guard 'spork', :cucumber_env =&gt; { 'RAILS_ENV' =&gt; 'test' }, :rspec_env =&gt; { 'RAILS_ENV' =&gt; 'test' } do
+  watch('config/application.rb')
+  watch('config/environment.rb')
+  watch(%r{^config/environments/.+\.rb$})
+  watch(%r{^config/initializers/.+\.rb$})
+  watch('Gemfile')
+  watch('Gemfile.lock')
+  watch('spec/spec_helper.rb') { :rspec }
+  watch('test/test_helper.rb') { :test_unit }
+  watch(%r{features/support/}) { :cucumber }
+  watch(%r{^spec/support/.+\.rb$})
+end
+
+guard 'rspec', :version =&gt; 2, cli: '--drb' do
+  watch(%r{^spec/.+_spec\.rb$})
+  watch(%r{^lib/(.+)\.rb$})     { |m| "spec/lib/#{m[1]}_spec.rb" }
+  watch('spec/spec_helper.rb')  { "spec" }
+
+  # Rails example
+  watch(%r{^app/(.+)\.rb$})                           { |m| "spec/#{m[1]}_spec.rb" }
+  watch(%r{^app/(.*)(\.erb|\.haml)$})                 { |m| "spec/#{m[1]}#{m[2]}_spec.rb" }
+  watch(%r{^app/controllers/(.+)_(controller)\.rb$})  { |m| "spec/#{m[2]}s/#{m[1]}_#{m[2]}_spec.rb" }
+  watch(%r{^spec/support/(.+)\.rb$})                  { "spec" }
+  watch('app/controllers/application_controller.rb')  { "spec/controllers" }
+  # Capybara request specs
+  watch(%r{^app/views/(.+)/.*\.(erb|haml)$})          { |m| "spec/requests/#{m[1]}_spec.rb" }
+
+end
+</pre>
+
+<p>You&#8217;re all set and ready to run guard.</p>

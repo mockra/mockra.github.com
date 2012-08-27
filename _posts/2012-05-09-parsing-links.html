@@ -1,0 +1,77 @@
+---
+layout: post
+title: Parsing Links for an Image
+---
+
+<p>Here&#8217;s a generic image parser I wrote to find resource images for my project management application. It&#8217;s definitely a process you&#8217;ll want to run in the background, but it should handle most links.</p>
+
+<p>I&#8217;ve tried to provide some brief comments in the code example to give you an idea of what I&#8217;m trying to do. This is a very simple solution to a complex problem and may not scale to your specific needs. You&#8217;ll also need to install <code>gem 'nokogiri'</code>.</p>
+
+<pre class="prettyprint rb">
+require 'open-uri'
+require 'nokogiri'
+
+module ResourceParser
+  # Pass the page link you want to grab an image from
+  # ResourceParser.link your_url
+  def self.link(url)
+    # Need to format the URL for Nokogiri
+    url = format_link url
+
+    # Pass the URL to Nokogiri to get the image link
+    img = get_image url
+
+    # Return nil if we couldn't find an image
+
+    if img.nil?
+      return nil
+    else
+      img = img['src']
+    end
+
+    # Strip parameters from the url
+    url = url.slice( /\A(http|https)(:\/\/){1}[a-z0-9\-\.]{1,}/i )
+    # Format the URL based on the type of link in the img src attribute
+    format_image( img, url )
+  end
+
+  def self.get_image(url)
+    doc = Nokogiri::HTML(open url)
+    doc.css('img').first
+
+  # Return nil if Nokogiri runs into an error with the link
+  rescue StandardError
+    return nil
+  end
+
+  def self.format_link(url)
+    unless url =~ /\Ahttp|https/i
+      url = "http://#{url}"
+    end
+    url
+  end
+
+  def self.format_image(img, url)
+    # Make sure we have the correct image format
+    unless img =~ /\.(png|jpg|gif|bmp|tif|jpeg)/i
+      return nil
+    end
+
+    # Check for absolute path
+    if img =~ /\A\/.*/
+      return url + img
+    # Check for complete link
+    elsif img =~ /\Ahttp|https/i
+      return img
+    # Handle a relative path
+    else
+      return url + '/' + img
+    end
+  end
+
+end
+</pre>
+
+<p>The module is using Nokogiri for the parsing, so it won&#8217;t work on websites like Twitter or those that serve their pages using javascript. You pass the link method a url, and it will either return a link to the first image it finds or nil. If Nokogiri runs into an error looking up the page, it will return nil as well.</p>
+
+<p>The module was written to format the image src that it finds, so it should always return the correct link for the image. This was needed to handle websites that include a complete HTML link in their img src, as well as sites that provide an absolute or relative path to the image.</p>
