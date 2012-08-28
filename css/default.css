@@ -11,13 +11,9 @@ header ul {
   text-align: right;
 }
 
-header li {
-  padding: 4px;
-}
-
-.post {
-  margin-bottom: 32px;
-}
+  header li {
+    padding: 4px;
+  }
 
 p {
   font-family: 'Quantico', sans-serif;
@@ -34,6 +30,24 @@ h3 {
  line-height: 0;
 }
 
+h3 a {
+  color: #c3325f;
+}
+
+h3 a:hover {
+  color: #c3325f;
+}
+
+.post {
+  margin-bottom: 32px;
+}
+
+  .post small {
+    float: right;
+    margin: 20px;
+    color: #E3DEE0;
+  }
+
 .posts {
   margin: 8px;
 }
@@ -46,39 +60,25 @@ h3 {
   background:  rgba(85, 85, 85, 0.15);
 }
 
-.hero-unit p {
-    padding-top: 12px;
-    color: #999999;
-    width: 550px;
-}
+  .hero-unit p {
+      padding-top: 12px;
+      color: #999999;
+      width: 550px;
+  }
 
-.hero-unit h1 {
-  color: #c3325f;
-  font-family: 'Plaster', cursive;s
-}
+  .hero-unit h1 {
+    color: #c3325f;
+    font-family: 'Plaster', cursive;s
+  }
 
-.hero-unit h1 a {
-  color: #c3325f;
-}
+    .hero-unit h1 a {
+      color: #c3325f;
+    }
 
-.hero-unit h1 a:hover {
-  color: #c3325f;
-  text-decoration: none;
-}
-
-h3 a {
-  color: #c3325f;
-}
-
-h3 a:hover {
-  color: #c3325f;
-}
-
-.post small {
-  float: right;
-  margin: 20px;
-  color: #E3DEE0;
-}
+      .hero-unit h1 a:hover {
+        color: #c3325f;
+        text-decoration: none;
+      }
 
 .archive a {
   text-align: center;
