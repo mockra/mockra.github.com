@@ -2,13 +2,15 @@
 layout: default
 title: Archives
 ---
-<div class="row-fluid">
-  <div class="span6 offset3">
-    <dl class="archives-list dl-horizontal">
+<div class="content">
+  <div class="archives">
+    <ul>
       {% for post in site.posts offset: 6 %}
-          <dt>{{ post.date | date_to_string }}</dt>
-          <dd><a href="{{ post.url }}">{{ post.title }}</a></dd>
+        <li>
+          <span class="date">{{ post.date | date_to_string }}</span>
+          <span class="title"><a href="{{ post.url }}">{{ post.title }}</a></span>
+        </li>
       {% endfor %}
-    </dl>
+    </ul>
   </div>
 <div>

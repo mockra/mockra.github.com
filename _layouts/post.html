@@ -1,12 +1,15 @@
 ---
 layout: default
 ---
-<div class='post'>
-  <div class="row-fluid">
-    <div class="span8 offset2">
-      <h2>{{ page.title }}</h2>
+<div class="content">
+  <section class="post">
+    <header class="post-header">
+      <h3><a href="{{ post.url }}">{{ page.title }}</a></h3>
+      <h5>{{ page.date | date_to_string }}</h5>
+    </header>
+    <hr/>
+    <div class="post-description">
       {{ content }}
-      <small>{{ page.date | date_to_string }}</small>
     </div>
-  </div>
+  </section>
 </div>
