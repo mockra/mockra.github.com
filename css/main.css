@@ -116,8 +116,13 @@ a.mail {
 .brand-title {
   margin: 0;
   text-transform: uppercase;
-  margin-bottom: 24px;
   font-weight: bold;
+}
+
+.sub-title {
+  margin: 0;
+  color: #74cfae;
+  margin-bottom: 24px;
 }
 
 .nav-list {
