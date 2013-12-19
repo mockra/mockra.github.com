@@ -1,0 +1,151 @@
+body {
+  background-color: #f2f2f2;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  color: #555;
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
+}
+
+a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #7b7b7b;
+}
+
+h3 a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+h3 a:hover {
+  color: #7b7b7b;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  color: #333;
+}
+
+.post-header h3, h5 {
+  display: inline-block;
+}
+
+.post-header h3 {
+  margin-right: 12px;
+}
+
+p {
+  line-height: 28px;
+  margin-bottom: 25px;
+  font-size: 16px;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  padding: 0;
+}
+
+#layout {
+  padding-left: 20%;
+  position: relative;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 20%;
+  margin-left: -20%;
+  background: #3498db;
+  border-right: 1px solid #999;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  color: #7b7b7b;
+  text-decoration: none;
+}
+
+.header {
+  margin: 50% 2em 0;
+  text-align: right;
+}
+
+.brand-title {
+  margin: 0;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  font-weight: bold;
+}
+
+.nav-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-item {
+  display: block;
+  zoom: 1;
+  margin-top: 6px;
+}
+
+.content {
+  padding: 2em 3em 0;
+}
+
+.post {
+  padding-bottom: 1em;
+}
+
+.archives ul {
+  list-style: none;
+}
+
+.archives .date {
+  width: 120px;
+  text-align: right;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+@media (max-width: 767px) {
+  .sidebar {
+    width: 100%;
+    position: relative;
+    margin: 0;
+  }
+
+  .header {
+    text-align: center;
+    top: auto;
+    margin: 3em auto;
+    position: static;
+  }
+
+  #layout {
+    padding: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: 2em 1em 0;
+  }
+}

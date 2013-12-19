@@ -2,35 +2,37 @@
 <html>
   <head>
     <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="/css/bootstrap.css" type="text/css" />
-    <link rel="stylesheet" href="/css/default.css" type="text/css" />
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
+    <link rel="stylesheet" href="/css/main.css">
   </head>
   <body>
-    <div class="container-fluid">
-      <div class="row-fluid">
-        <header class="hero-unit span12">
-          <div class="row-fluid">
-            <div class="span8">
-              <h1><a href="/">Mockra</a></h1>
-              <p>This is the blog of David Ratajczak, a Ruby developer.</p>
-            </div>
-            <div class="span4">
-              <ul class="pull-right">
-                <li>
-                  <a class="btn btn-success" href="http://github.com/mockra">Github</a>
-                </li>
-                <li>
-                  <a class="btn btn-info" href="http://twitter.com/mockra_">Twitter</a>
-                </li>
-                <li>
-                  <a class="btn btn-warning" href="mailto:david@mockra.com">Contact</a>
-                </li>
-              </ul>
-            </div>
-          </div>
+    <div class="pure-g-r" id="layout">
+      <div class="sidebar pure-u">
+        <header class="header">
+          <hgroup>
+            <h1 class="brand-title"><a href="/">Mockra</a></h1>
+          </hgroup>
+          <nav class="nav">
+            <ul class="nav-list">
+              <li class="nav-item">
+                <a href="http://github.com/mockra">Github</a>
+              </li>
+              <li class="nav-item">
+                <a href="http://twitter.com/mockra_">Twitter</a>
+              </li>
+              <li class="nav-item">
+                <a href="mailto:david@mockra.com">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a href="/archives.html">Archives</a>
+              </li>
+            </ul>
+          </nav>
         </header>
       </div>
-      {{ content }}
+      <div class="pure-u-1">
+        {{ content }}
+      </div>
     </div>
   </body>
 </html>
