@@ -146,6 +146,15 @@ a.mail {
   margin: 0 2em;
 }
 
+.content-subhead {
+  text-transform: uppercase;
+  color: #aaa;
+  padding: 0.4em 0;
+  font-size: 80%;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
 .archives ul {
   list-style: none;
 }
