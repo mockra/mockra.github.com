@@ -109,3 +109,6 @@ You can then access your application at [0.0.0.0:3333](0.0.0.0:3333).
 That's everything we're going to cover in the first part of this tutorial. The
 second part will dig into the Ember.JS tutorial, as well as setting up our REST
 API with `express`.
+
+You can find the second part of this guide,
+[here](http://mockra.com/2013/12/22/brunch-express-ember-part-2/).
