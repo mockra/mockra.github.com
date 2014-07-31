@@ -212,3 +212,13 @@ h4 {
     padding: 2em 1em 0;
   }
 }
+
+.post-description img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  max-height: 150px;
+  border: 1px solid #ccc;
+  padding: 4px;
+  border-radius: 4px;
+}
