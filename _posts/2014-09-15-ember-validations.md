@@ -7,6 +7,12 @@ on the client side. If you're using EmberJS, then
 [ember-validations](https://github.com/dockyard/ember-validations) provides a
 great solution to adding validation to your forms.
 
+Once you've selected the build you want to use, you'll also need to import the
+library. You can do so by adding the following line to your `Brocfile.js`. This
+line might change depending on the location of your ember-validations folder.
+
+`app.import('vendor/ember-validations/index.js');`
+
 Here's an example of validation handling for a Sign Up form.
 
 ##Controller##
