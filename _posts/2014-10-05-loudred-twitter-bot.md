@@ -10,8 +10,6 @@ The bot grabs the latest top 3 posts from various subreddits I follow, and
 posts them to Twitter. I'm a big fan of using Twitter as a form of content
 curation, and this eliminates another news source I used to visit.
 
-![loudred stream](/images/loudred_twitter.png)
-
 The bot uses the [twit](https://github.com/ttezel/twit) library for interacting
 with the Twitter API, but I ended up writing my own library for fetching posts
 from Reddit.
