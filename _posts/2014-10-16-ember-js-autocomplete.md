@@ -44,3 +44,8 @@ server. We're finally setting those results to `searchResults`.
 An example of a Ruby on Rails server implementing this response through
 middleware can be found,
 [here](https://github.com/mockra/mtghub/blob/master/app/middleware/search_cards.rb).
+
+##Update##
+You can update this example to use `ember-data` with the following snippet:
+
+{% gist mockra/2901568a952c0b8f043a %}
