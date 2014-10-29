@@ -1,6 +1,7 @@
 ---
 layout: post
 title: EmberJS Autocomplete
+keywords: [emberjs, autocomplete]
 ---
 Adding autocomplete or typeahead to an EmberJS application can be somewhat
 challenging if you're just getting started. It definitely requires you to

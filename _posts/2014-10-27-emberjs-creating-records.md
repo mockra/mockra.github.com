@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Ember Data Creating Records
+keywords: [ember-data, emberjs]
 ---
 Creating records with ember-data can be frustrating your first time around.
 Without having a decent grasp on the framework, it can be hard to know the
