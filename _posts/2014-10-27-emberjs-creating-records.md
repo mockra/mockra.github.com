@@ -35,3 +35,10 @@ The server response for the action would look like:
 {% gist mockra/45e6457d14622a1c2272 %}
 
 We'll also want to return a status code of `201`.
+
+##Edit 11/02/2014##
+
+If you're using async relationships, then you'll need to update to the latest
+version of ember-data. You can find details in this issue:
+
+https://github.com/emberjs/data/pull/1535
