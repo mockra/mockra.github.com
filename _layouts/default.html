@@ -1,67 +1,17 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>David Ratajczak - {{ page.title }}</title>
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/font-awesome.min.css">
-    <meta name="description" content="{{ page.title }} - This is the blog of David Ratajczak, a
-    developer focused on the web.">
-    <meta name='keywords' content="{{page.keywords | join: ', '}}">
-    <meta name='copyright' content='mockra'>
-    <meta name='author' content='David Ratajczak, david@mockra.com'>
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new
-      Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-25898378-1', 'mockra.com');
-      ga('send', 'pageview');
-    </script>
-  </head>
+  {% include head.html %}
+
   <body>
-    <div class="pure-g-r" id="layout">
-      <div class="sidebar pure-u">
-        <header class="header">
-          <hgroup>
-            <img src="/images/dragon.png" width="100%"/>
-            <h1 class="brand-title"><a href="/">Mockra</a></h1>
-            <h4 class="sub-title">- David Ratajczak</h4>
-          </hgroup>
-          <nav class="nav">
-            <ul class="nav-list">
-              <li class="nav-item">
-                <a href="/about.html">About</a>
-              </li>
-              <li class="nav-item">
-                <a href="/archives.html">Archives</a>
-              </li>
-              <li class="nav-item">
-                <a href="/">Blog</a>
-              </li>
-            </ul>
-          </nav>
-          <div class="social">
-            <a href="https://plus.google.com/u/0/+DavidRatajczak"
-              class="google" rel="me">
-              <i class="fa fa-google-plus fa-2x"></i>
-            </a>
-            <a href="http://github.com/mockra" class="github">
-              <i class="fa fa-github fa-2x"></i>
-            </a>
-            <a href="mailto:david@mockra.com" class="mail">
-              <i class="fa fa-envelope-o fa-2x"></i>
-            </a>
-            <a href="http://twitter.com/mockra_" class="twitter">
-              <i class="fa fa-twitter fa-2x"></i>
-            </a>
-          </div>
-        </header>
-      </div>
-      <div class="pure-u-1">
+
+    {% include nav.html %}
+
+    <div class="pure-g" id="layout">
+      <div class="pure-u-1-5"></div>
+      <div class="pure-u-3-5">
         {{ content }}
       </div>
+      <div class="pure-u-1-5"></div>
     </div>
   </body>
 </html>

@@ -1,0 +1,26 @@
+{% assign current = page.url | downcase | split: '/' %}
+
+<header class="header">
+  <hgroup>
+    <h1>
+      <img src="/images/logo.png">
+      &lt;
+      <a href="/">mockra</a>
+      &gt;
+    </h1>
+  </hgroup>
+
+  <div class="pure-menu pure-menu-horizontal">
+    <ul class="pure-menu-list">
+      <li class="pure-menu-item">
+        <a href="/" class="pure-menu-link">Blog</a>
+      </li>
+      <li class="pure-menu-item">
+        <a href="/archives.html" class="pure-menu-link">Archives</a>
+      </li>
+      <li class="pure-menu-item">
+        <a href="/about.html" class="pure-menu-link">About</a>
+      </li>
+    </ul>
+  </div>
+</header>
