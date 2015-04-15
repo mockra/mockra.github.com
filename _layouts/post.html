@@ -4,8 +4,10 @@ layout: default
 <div class="content">
   <section class="post">
     <header class="post-header">
-      <h3><a href="{{ post.url }}">{{ page.title }}</a></h3>
-      <h5>{{ page.date | date_to_string }}</h5>
+      <h3>
+        <a href="{{ post.url }}">{{ page.title }}</a>
+        <small>- {{ page.date | date_to_string }}</small>
+      </h3>
     </header>
     <hr/>
     <div class="post-description">
