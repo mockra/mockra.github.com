@@ -1,0 +1,21 @@
+body {
+  font-family: 'Vollkorn', serif;
+  color: $dark-gray;
+  background-color: $body-background;
+}
+
+pre {
+  background-color: $code-background;
+  border: 1px solid $light-gray;
+  padding: 12px 0px;
+  border-radius: 2px;
+}
+
+a {
+  color: $light-blue;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $gray;
+}
