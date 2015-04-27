@@ -1,7 +1,11 @@
-body {
-  font-family: 'Vollkorn', serif;
+html, body {
+  font-family: 'Josefin Sans', sans-serif;
   color: $dark-gray;
   background-color: $body-background;
+}
+
+p {
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 pre {
