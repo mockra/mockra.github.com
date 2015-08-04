@@ -14,7 +14,7 @@ You'll first want to install the MD5 library with the following command:
 
 You can then include the library by adding the following line to `Brocfile.js`.
 
-`app.import('vendor/ember-validations/index.js');`
+`app.import('bower_components/JavaScript-MD5/js/md5.js');`
 
 Now that we've installed our library for generating an MD5 hash, we can create
 our component. We'll want to generate the component using the command line
