@@ -4,7 +4,7 @@ title: Ember Debounce - Autocomplete
 ---
 <iframe
   width="178" height="24" style="border:0px"
-  src="http://mockra.com/2015/07/07/ember-debounce/">
+  src="http://mixonic.github.io/ember-community-versions/2015/07/07/ember-debounce-for-autocomplete.html">
 </iframe>
 
 While it's nice to provide instant feedback to your user, there are times when
