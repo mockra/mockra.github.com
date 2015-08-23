@@ -2,6 +2,11 @@
 layout: post
 title: Ember Debounce - Autocomplete
 ---
+<iframe
+  width="178" height="24" style="border:0px"
+  src="http://mockra.com/2015/07/07/ember-debounce/">
+</iframe>
+
 While it's nice to provide instant feedback to your user, there are times when
 it's wise to slow things down for your back-end. An example of such a case is
 an autocomplete field. While it would be nice to repopulate the results as
