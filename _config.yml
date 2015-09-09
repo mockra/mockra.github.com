@@ -2,3 +2,10 @@ auto: true
 baseurl: /
 permalink: /:year/:month/:day/:title
 markdown: redcarpet
+name: Mockra
+url: http://mockra.com
+author:
+  name: David Ratajczak
+  email: david@mockra.com
+gems:
+  - jekyll-feed
