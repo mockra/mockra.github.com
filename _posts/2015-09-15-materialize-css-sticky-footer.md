@@ -29,32 +29,32 @@ flexbox rules to support all of the browsers.
 `app/components/footer-section/component.js`
 
 ```
-import Ember from 'ember';
+  import Ember from 'ember';
 
-export default Ember.Component.extend({
-  tagName: 'footer',
-  classNames: ['page-footer']
-});
+  export default Ember.Component.extend({
+    tagName: 'footer',
+    classNames: ['page-footer']
+  });
 ```
 
 `app/styles/global.sass`
 
 ```
-body > .ember-view
-  display: -webkit-box
-  display: -webkit-flex
-  display: -ms-flexbox
-  display: flex
-  min-height: 100vh
-  -webkit-box-orient: vertical
-  -webkit-box-direction: normal
-  -webkit-flex-direction: column
-  -ms-flex-direction: column
-  flex-direction: column
+  body > .ember-view
+    display: -webkit-box
+    display: -webkit-flex
+    display: -ms-flexbox
+    display: flex
+    min-height: 100vh
+    -webkit-box-orient: vertical
+    -webkit-box-direction: normal
+    -webkit-flex-direction: column
+    -ms-flex-direction: column
+    flex-direction: column
 
-main
-  -webkit-box-flex: 1
-  -webkit-flex: 1 0 auto
-  -ms-flex: 1 0 auto
-  flex: 1 0 auto
+  main
+    -webkit-box-flex: 1
+    -webkit-flex: 1 0 auto
+    -ms-flex: 1 0 auto
+    flex: 1 0 auto
 ```
