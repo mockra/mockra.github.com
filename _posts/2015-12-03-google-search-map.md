@@ -12,15 +12,15 @@ location. Depending on your search functionality, this can happen on the server
 or client side. Once you have your coordinates, you can add them to a map
 container. Here's an example using `ruby/erb`.
 
-```
+~~~
   <div id="map-container" data-lat=<%= @location.latitude %>
     data-lng=<%= @location.longitude %>></div>
-```
+~~~
 
 You'll need to provide some basic styling for your map-container. Here's some
 sample CSS to get you started:
 
-```
+~~~
   #map-container {
     margin-top: 40px
     height: 600px
@@ -33,20 +33,20 @@ sample CSS to get you started:
     outline: 1px solid gray
     outline-offset: 4px
   }
-```
+~~~
 
 Once you have your markup finished, we can add the javascript necessary
 to get your map working. The first thing you'll need to do is include the
 google places library, you can do so with the following script tag:
 
-```
+~~~
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
-```
+~~~
 
 You'll then need to add some javascript for displaying the map in your
 container. Here's the coffeescript for doing that:
 
-```
+~~~
   $ ->
     if $('#map-container').length > 0
       latitude = parseFloat($('#map-container').data('lat'))
@@ -64,7 +64,7 @@ container. Here's the coffeescript for doing that:
           data: { coords: map.getBounds().toUrlValue() },
           success: googleAddMarkers.bind(map)
         })
-```
+~~~
 
 Most of the logic here is just to turn our map container into an interactive
 map using google's library. The main difference you'll notice is at the end.
@@ -77,10 +77,10 @@ markers for each location returned by your search.
 
 Here's an example endpoint using Ruby on Rails and the Geocoder library.
 
-```
+~~~
   render json: Location.within_bounding_box(params[:coords].split(','))
     .pluck(:lat, :lng, :name, :id)
-```
+~~~
 
 We're searching locations using the coordinates provided by our map container,
 and then grabbing the latitude, longitude, name, and id of our location. You
@@ -91,7 +91,7 @@ URLs for our markers.
 Once we've finished adding our endpoint, we can add the `googleAddMarkers`
 function to our javascript.
 
-```
+~~~
   googleAddMarkers = (data) ->
     map = this
     $.each data, (index, location) ->
@@ -103,7 +103,7 @@ function to our javascript.
       })
       google.maps.event.addListener marker, 'click', ->
         window.location.href = this.url
-```
+~~~
 
 You'll need to update this function to work with your API response, but the key
 attributes you need to provide are the `position` and `map`. The title is used

@@ -10,14 +10,14 @@ individually.
 You'll need to first install `broccoli-static-compiler` with the following
 command:
 
-```
+~~~
   npm install --save-dev broccoli-static-compiler
-```
+~~~
 
 Here's an example `ember-cli-build.js` file that imports multiple fonts at
 once.
 
-```
+~~~
   var EmberApp = require('ember-cli/lib/broccoli/ember-app');
   var pickFiles = require('broccoli-static-compiler');
 
@@ -38,11 +38,11 @@ once.
 
     return app.toTree([materializeFonts]);
   };
-```
+~~~
 
 The lines used to important the fonts are:
 
-```
+~~~
   var pickFiles = require('broccoli-static-compiler');
 
   var materializeFonts = pickFiles('bower_components/materialize/font/roboto', {
@@ -51,4 +51,4 @@ The lines used to important the fonts are:
   });
 
   return app.toTree([materializeFonts]);
-```
+~~~

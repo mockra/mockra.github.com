@@ -27,7 +27,7 @@ that will define your transitions.
 
 Here's an example that adds a swipe left/right feel to your transitions.
 
-```
+~~~
   export default function(){
     this.transition(
       this.fromRoute('people.index'),
@@ -36,4 +36,4 @@ Here's an example that adds a swipe left/right feel to your transitions.
       this.reverse('toRight')
     );
   };
-```
+~~~

@@ -14,20 +14,20 @@ When designing the API for my module, I wanted to keep the interface simple
 and functional. My goal was to be able to do something simple like the
 following in my node applications.
 
-```
+~~~
   ctx.body = serialize('users', users, {
     sideload: { name: 'posts' },
     without: ['password', 'token']
   })
-```
+~~~
 
 I'll typically create a unique serializer for each type of document in my API,
 which helps to keep my routes cleaner. A user serializer would give me the
 option to do something like:
 
-```
+~~~
   ctx.body = userSerializer(users, { withPosts: true })
-```
+~~~
 
 If you're interested in providing an API for the EmberJS RestSerializer, or
 adding better serialization support in your Node apps, feel free to check out

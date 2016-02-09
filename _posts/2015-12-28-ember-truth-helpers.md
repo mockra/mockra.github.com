@@ -10,14 +10,14 @@ out of the box. I'll admit this might be for good reason, but I've found the
 
 You can install the addon with:
 
-```
+~~~
   ember install ember-truth-helpers
-```
+~~~
 
 The addon itself provides some straightforward functionality that allows you to
 add logic to your `if` statements. For example:
 
-```
+~~~
 {% raw %}
   {{#if (and a b)}}
     {{show-some-component}}
@@ -25,9 +25,9 @@ add logic to your `if` statements. For example:
     {{show-alternate-component}}
   {{/if}}
 {% endraw %}
-```
+~~~
 
-```
+~~~
 {% raw %}
   {{#each options as |option|}}
     {{#if (eq value option)}}
@@ -39,7 +39,7 @@ add logic to your `if` statements. For example:
     {{/if}}
   {{/each}}
 {% endraw %}
-```
+~~~
 
 It's important to keep in mind that a lot of this functionality will be better
 off in a computed property. If you find you can't use a computed property in a

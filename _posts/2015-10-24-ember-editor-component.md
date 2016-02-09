@@ -9,7 +9,7 @@ editors, but this approach has worked well for me.
 
 Here's what your component file should look like:
 
-```
+~~~
   import Ember from 'ember';
   const { set, get } = Ember;
 
@@ -34,7 +34,7 @@ Here's what your component file should look like:
       set(this, '_editor', null);
     }
   });
-```
+~~~
 
 You'll need to make some changes depending on the API your editor provides. The
 first change you'll need to make is to `new YourEditor({})`. This value will
@@ -54,17 +54,17 @@ used to destroy your editor instance.
 
 Your component template will look like:
 
-```
+~~~
 {% raw %}
   {{textarea value=value id="editor"}}
 {% endraw %}
-```
+~~~
 
 Finally, when you want to add an editor for a specific text input, you can use
 the following code:
 
-```
+~~~
 {% raw %}
   {{your-editor-component value=post.content}}
 {% endraw %}
-```
+~~~

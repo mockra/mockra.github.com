@@ -18,7 +18,7 @@ Here's an example of an e-mail validation.
 
 `app/validators/local/email.js`
 
-```
+~~~
   import Ember from 'ember';
   import Base from 'ember-validations/validators/base';
 
@@ -31,13 +31,13 @@ Here's an example of an e-mail validation.
       }
     }
   });
-```
+~~~
 
 You can then use this validation in your controllers with the following syntax.
 
-```
+~~~
   email: {
     presence: true,
     email: true
   }
-```
+~~~

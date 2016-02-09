@@ -19,14 +19,14 @@ explicitly in each test file. This allows better awareness of the state you're
 setting up in each test, as well as the performance impact. You can do so with
 the following code:
 
-```
+~~~
   var Post = require('../../models/post'
 
   after(function(done) {
     Post.remove().exec()
     done()
   })
-```
+~~~
 
 You will want to switch `Post` with whatever mongoose model you need to clean
 up. This specific example will clear the `post` collection after all of the

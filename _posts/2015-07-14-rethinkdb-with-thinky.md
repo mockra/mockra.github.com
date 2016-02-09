@@ -14,17 +14,17 @@ how I incorporate Thinky with my node projects.
 The first thing I do is setup a `thinky.js` file that I can include in my
 models.
 
-```
+~~~
   var config = require('../config');
 
   var thinky = require('thinky')(config.thinky);
 
   module.exports = thinky;
-```
+~~~
 
 That `config.js` file looks like:
 
-```
+~~~
   module.exports = {
     thinky: {
       host: "localhost",
@@ -33,11 +33,11 @@ That `config.js` file looks like:
       db: "appName"
     }
   }
-```
+~~~
 
 I can then include `thinky` in my models without reloading the `thinky` module.
 
-```
+~~~
   var thinky = require('../util/thinky.js');
   var type = thinky.type;
 
@@ -47,4 +47,4 @@ I can then include `thinky` in my models without reloading the `thinky` module.
   });
 
   module.exports = Post;
-```
+~~~

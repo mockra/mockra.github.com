@@ -8,18 +8,18 @@ you can start using them in your application.
 
 In your `ember-cli-build.js` file, you'll need to add a babel option:
 
-```
+~~~
   var app = new EmberApp(defaults, {
     babel: {
       includePolyfill: true
     }
   });
-```
+~~~
 
 You can then start taking advantage of async/await in your app. Here's a quick
 example of a component action:
 
-```
+~~~
   import Ember from 'ember';
   const { get, set } = Ember;
   const { service } = Ember.inject;
@@ -45,4 +45,4 @@ example of a component action:
       }
     }
   });
-```
+~~~

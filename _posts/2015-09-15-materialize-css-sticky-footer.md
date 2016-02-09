@@ -16,7 +16,7 @@ flexbox rules to support all of the browsers.
 
 `app/application/template.hbs`
 
-```
+~~~
 {% raw %}
   <main>
     {{outlet}}
@@ -24,22 +24,22 @@ flexbox rules to support all of the browsers.
 
   {{footer-section}}
 {% endraw %}
-```
+~~~
 
 `app/components/footer-section/component.js`
 
-```
+~~~
   import Ember from 'ember';
 
   export default Ember.Component.extend({
     tagName: 'footer',
     classNames: ['page-footer']
   });
-```
+~~~
 
 `app/styles/global.sass`
 
-```
+~~~
   body > .ember-view
     display: -webkit-box
     display: -webkit-flex
@@ -57,4 +57,4 @@ flexbox rules to support all of the browsers.
     -webkit-flex: 1 0 auto
     -ms-flex: 1 0 auto
     flex: 1 0 auto
-```
+~~~

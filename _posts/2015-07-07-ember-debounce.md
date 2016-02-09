@@ -19,7 +19,7 @@ features, the trade off is worthwhile.
 
 Here's an example of implementing such a feature using `Ember.run.debounce`.
 
-```
+~~~
   import Ember from 'ember';
   const { get, set, observer } = Ember;
 
@@ -39,11 +39,11 @@ Here's an example of implementing such a feature using `Ember.run.debounce`.
       Ember.run.debounce(this, this.setPosts, 200);
     })
   });
-```
+~~~
 
 And the template:
 
-```
+~~~
 {% raw %}
   <div class="list-group">
     {{#each posts key="id" as |post|}}
@@ -52,4 +52,4 @@ And the template:
     {{/each}}
   </div>
 {% endraw %}
-```
+~~~

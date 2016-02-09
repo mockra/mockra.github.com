@@ -15,17 +15,17 @@ I've found most useful for this is
 
 You can add this gem to your `Gemfile` with the following line:
 
-```
+~~~
   group :development, :test do
     gem 'rspec-retry'
   end
-```
+~~~
 
 You'll also want to configure your `spec_helper.rb` to setup verbose retry.
 This is important, so that you can monitor your tests and ensure that there's
 not an underlying issue behind failing specs.
 
-```
+~~~
   require 'rspec/retry'
 
   RSpec.configure do |config|
@@ -34,12 +34,12 @@ not an underlying issue behind failing specs.
     # show exception that triggers a retry if verbose_retry is set to true
     config.display_try_failure_messages = true
   end
-```
+~~~
 
 You can then flag specs that are giving you issues like this:
 
-```
+~~~
   it 'should randomly succeed', retry: 3 do
     expect(rand(2)).to eq(1)
   end
-```
+~~~

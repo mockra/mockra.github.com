@@ -14,7 +14,7 @@ the emojify component from getting too complicated.
 I'm not sure if I like the pod structure for services, but I went with it here.
 Here's the `app/emoji/service.js` file:
 
-```
+~~~
   import Ember from 'ember';
   const { get } = Ember;
 
@@ -37,11 +37,11 @@ Here's the `app/emoji/service.js` file:
       return html;
     }
   });
-```
+~~~
 
 I then utilize the service in my component.
 
-```
+~~~
   import Ember from 'ember';
   const { computed, get } = Ember;
 
@@ -54,20 +54,20 @@ I then utilize the service in my component.
       return get(this, 'emoji').emojify(content);
     })
   });
-```
+~~~
 
 In the template we want to tell handlebars not to escape the html:
 
-```
+~~~
 {% raw %}
   {{{formattedContent}}}
 {% endraw %}
-```
+~~~
 
 Depending on how you want to handle your emoji images, you may need to exclude
 them from fingerprinting. Here's an example using `ember-cli-build.js`.
 
-```
+~~~
   var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
   module.exports = function(defaults) {
@@ -79,4 +79,4 @@ them from fingerprinting. Here's an example using `ember-cli-build.js`.
 
     return app.toTree();
   };
-```
+~~~

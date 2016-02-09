@@ -14,14 +14,14 @@ ORM.
 
 This example assumes the token is passed in a header that looks like:
 
-```
+~~~
   Token token="13p123p123n12pi3n1i31", email="test@example.com"
-```
+~~~
 
 It also uses the Thinky ORM for RethinkDB. Here's an example of the middleware
 that would go in: `middleware/current-user.js`
 
-```
+~~~
   const User = require('../models/user')
 
   module.exports = (app) => {
@@ -45,17 +45,17 @@ that would go in: `middleware/current-user.js`
 
     return app
   }
-```
+~~~
 
 You can then include this middleware in your application by adding the
 following line to `app.js` or `index.js`.
 
-```
+~~~
   require('./middleware/current-user')(app)
-```
+~~~
 
 You can then access the current user in your routes with the following code:
 
-```
+~~~
   ctx.state.currentUser
-```
+~~~

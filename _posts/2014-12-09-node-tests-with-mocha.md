@@ -16,18 +16,18 @@ We can do that with the following commands.
 Mocha is our test runner, and we'll be using chai to provide us with
 expectations. It essentially gives us access to:
 
-```
+~~~
   expect([1, 2]).to.have.length(2)
-```
+~~~
 
 Once we've finished installing the required libraries, we can add a test
 script to our `package.json` file.
 
-```
+~~~
   "scripts": {
     "test": "find ./test -name '*_test.js' | xargs mocha -R spec"
   }
-```
+~~~
 
 Now when we run `npm test`, we'll run every file in our test directory that
 ends in `_test.js` through mocha.
@@ -35,7 +35,7 @@ ends in `_test.js` through mocha.
 In addition to adding a test command, we can setup a `mocha.opts` file in our
 test directory to provide some sane defaults. Here's an example file:
 
-```
+~~~
 --require ./test/common.js
 --reporter spec
 --ui bdd
@@ -43,7 +43,7 @@ test directory to provide some sane defaults. Here's an example file:
 --colors
 --timeout 60000
 --slow 300
-```
+~~~
 
 In this file, we're telling it to load the `common.js` file in our test
 directory. We can then setup various globals and state in the `common.js` file
@@ -52,13 +52,13 @@ Rails background, think of it like `spec_helper.rb`.
 
 Here's an example `common.js` file:
 
-```
+~~~
   global.chai = require('chai')
   global.expect = global.chai.expect
   global.app = require('../index')
   process.env.NODE_ENV = process.env.NODE_ENV || 'test';
   process.env.TEST_ENV = process.env.TEST_ENV || 'test';
-```
+~~~
 
 In this file, we're setting up `expect`, `chai`, and `app` as global variables.
 This prevents us from having to require `chai` and `chai.expect` in all of our

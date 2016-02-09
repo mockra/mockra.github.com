@@ -1,11 +1,14 @@
-auto: true
 baseurl: /
 permalink: /:year/:month/:day/:title
-markdown: redcarpet
 name: Mockra
 url: http://mockra.com
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
 author:
   name: David Ratajczak
   email: david@mockra.com
 gems:
   - jekyll-feed
+  - jekyll-gist

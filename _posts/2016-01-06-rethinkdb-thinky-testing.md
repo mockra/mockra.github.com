@@ -7,7 +7,7 @@ database between each test. Here's a quick guide for performing the reset.
 
 The first thing you'll want to do is a create a `test/helper.js` file.
 
-```
+~~~
   const config = require('../config')
   const thinky = require('../util/thinky')
   const _ = require('lodash')
@@ -19,7 +19,7 @@ The first thing you'll want to do is a create a `test/helper.js` file.
     })
     done()
   })
-```
+~~~
 
 Depending on your application setup, you'll likely need to tweak the config
 lines. `config.thinky.db` will need to be the name of your test database, such
@@ -28,12 +28,12 @@ as `your_app_test`.
 You can then include this helper in your tests to include the reset
 functionality.
 
-```
+~~~
   require('../helper')
 
   describe('User Model', function () {
   })
-```
+~~~
 
 You can add additional setup to your `helper.js` file that you would like to
 include in all your specs.

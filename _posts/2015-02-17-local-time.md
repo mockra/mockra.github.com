@@ -24,7 +24,7 @@ You'll then use the helper methods provided to display your dates. Here's an
 example:
 
 
-```
+~~~
   <%= local_time_ago(comment.created_at) %>
   # Output: 14 hours ago
-```
+~~~

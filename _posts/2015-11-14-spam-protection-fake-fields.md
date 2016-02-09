@@ -11,15 +11,15 @@ This approach relies on the fact that most scripts don't render CSS, so they'll
 fill in an invisible form field, whereas your users that can't see the field
 will not. Here's an example of how you can setup the fake field.
 
-```
+~~~
   <input type="text" name="business" id="business" class="fake-field" tabindex="-1">
-```
+~~~
 
-```
+~~~
   .fake-field {
     display: none !important;
   }
-```
+~~~
 
 You can then use javascript to prevent your form from being submitted if that
 input contains a value. There's also the option of preventing the input server

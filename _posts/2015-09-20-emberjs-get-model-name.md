@@ -9,6 +9,6 @@ Data.
 
 Here's an example for a post model:
 
-```
+~~~
   get(this, 'yourModel.constructor.modelName') === 'post'
-```
+~~~

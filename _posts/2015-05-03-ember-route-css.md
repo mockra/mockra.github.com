@@ -12,7 +12,7 @@ you'll want to do is create an initializer file, such as
 
 You can then insert the following code:
 
-```
+~~~
   import Ember from 'ember';
 
   var alreadyRun = false;
@@ -46,4 +46,4 @@ You can then insert the following code:
     name: 'route-body-tags',
     initialize: initialize
   };
-```
+~~~

@@ -8,7 +8,7 @@ example of an initializer that will inject the router into your components.
 
 `app/initializers/component-routes.js`
 
-```
+~~~
   export function initialize(application) {
     application.inject('component', 'router', 'router:main')
   }
@@ -17,10 +17,10 @@ example of an initializer that will inject the router into your components.
     name: 'component-routes',
     initialize
   }
-```
+~~~
 
 You can then access the router in your components like such:
 
-```
+~~~
   get(this, 'router').transitionTo('dashboard')
-```
+~~~

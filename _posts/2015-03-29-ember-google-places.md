@@ -15,7 +15,7 @@ import it in your `Brocfile.js`.
 
 Once that's done, you can create your component using the following code:
 
-```
+~~~
   import Ember from 'ember';
 
   export default Ember.TextField.extend({
@@ -29,7 +29,7 @@ Once that's done, you can create your component using the following code:
       new google.maps.places.Autocomplete(this.$()[0], options);
     }
   });
-```
+~~~
 
 This component builds on `Ember.TextField` to watch for inserts, and then
 correspondingly updates the auto complete results.

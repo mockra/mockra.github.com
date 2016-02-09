@@ -28,16 +28,16 @@ You can use `ember deploy --enviornment production` to upload your current
 build. Once your build has been deployed, you can activate that build through
 the following command:
 
-```
+~~~
   ember deploy:activate --revision your-revision-id --environment production
-```
+~~~
 
 If for some reason you need to rollback to a previous build, you can check your
 previous releases with:
 
-```
+~~~
   ember deploy:list --environment production
-```
+~~~
 
 Once you've found the release you want to rollback to, you can simply activate
 that release.
