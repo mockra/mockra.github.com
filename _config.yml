@@ -12,3 +12,12 @@ author:
 gems:
   - jekyll-feed
   - jekyll-gist
+  - jekyll-seo-tag
+twitter:
+  username: mockra_
+logo:
+  /images/dragon.png
+description:
+  The blog of David Ratajczak, a developer focused on the web.
+author:
+  David Ratajczak, david@mockra.com

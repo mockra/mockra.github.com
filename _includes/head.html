@@ -1,12 +1,6 @@
 <head>
-  <title>{{ page.title }}</title>
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
   <link rel="stylesheet" href="/css/app.css">
-  <meta name="description" content="{{ page.title }} - This is the blog of David Ratajczak, a
-  developer focused on the web.">
-  <meta name='keywords' content="{{page.keywords | join: ', '}}">
-  <meta name='copyright' content='mockra'>
-  <meta name='author' content='David Ratajczak, david@mockra.com'>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -19,4 +13,6 @@
     ga('create', 'UA-25898378-1', 'mockra.com');
     ga('send', 'pageview');
   </script>
+
+  {% seo %}
 </head>
