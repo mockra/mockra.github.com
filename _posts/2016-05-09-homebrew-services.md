@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Ember-Cli
+title: Homebrew Services
 ---
 If you're like me, you likely have a long list of homebrew packages installed.
 You most likely also have quite a few running through `launchd`. Starting,
