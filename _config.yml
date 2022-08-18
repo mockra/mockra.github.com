@@ -1,6 +1,6 @@
 baseurl: /
 permalink: /:year/:month/:day/:title
-name: Mockra
+title: Mockra
 url: http://mockra.com
 markdown: kramdown
 kramdown:
@@ -9,12 +9,10 @@ kramdown:
 author:
   name: David Ratajczak
   email: david@mockra.com
-gems:
+plugins:
   - jekyll-feed
   - jekyll-gist
   - jekyll-seo-tag
-twitter:
-  username: mockra_
 logo:
   /images/dragon.png
 description:
