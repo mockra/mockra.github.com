@@ -422,3 +422,30 @@ img {
   .archive time { width: auto; }
   .site-header { gap: 0.5rem; }
 }
+
+/* ---------- Site footer ---------- */
+
+.site-footer {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 2.5rem;
+  text-align: center;
+}
+
+.site-footer p { margin: 0; }
+
+.site-footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.site-footer a:hover {
+  color: var(--amber);
+  text-decoration: none;
+}

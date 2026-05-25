@@ -14,5 +14,13 @@ plugins:
   - jekyll-gist
   - jekyll-seo-tag
   - jekyll-redirect-from
+  - jekyll-sitemap
 logo: /images/dragon.png
+image: /images/dragon.png
 description: David Ratajczak — engineer at GitHub, based in Sacramento.
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /images/dragon.png
