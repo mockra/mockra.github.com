@@ -1,20 +1,22 @@
 ---
 layout: default
-title: Mockra
+title: David Ratajczak
 ---
-<div class="content">
-  <div class="posts">
-    {% for post in site.posts limit: 20 %}
-      <section class="post">
-        <header class="post-header">
-          <h3>
-            <a href="{{ post.url }}">{{ post.title }}</a>
-            <small>- {{ post.date | date_to_string }}</small>
-          </h3>
-
-          {{ post.content }}
-        </header>
-      </section>
-    {% endfor %}
-  </div>
-</div>
+<section class="landing">
+  <h1 class="display">David Ratajczak</h1>
+  <p class="lede">Engineer at <a href="https://github.com/">GitHub</a>, based in Sacramento. <span class="aside">This used to be a blog &mdash; the <a href="/archive/">archive</a> is still here.</span></p>
+  <ul class="links">
+    <li>
+      <a href="https://github.com/mockra">
+        {% include icon-github.html %}
+        <span>github.com/mockra</span>
+      </a>
+    </li>
+    <li>
+      <a href="mailto:david@mockra.com">
+        {% include icon-mail.html %}
+        <span>david@mockra.com</span>
+      </a>
+    </li>
+  </ul>
+</section>

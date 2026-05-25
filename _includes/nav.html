@@ -1,23 +1,11 @@
-{% assign current = page.url | downcase | split: '/' %}
-
-<header class="header">
-  <hgroup>
-    <h1>
-      <a href="/">mockra</a>
-    </h1>
-  </hgroup>
-
-  <div class="pure-menu pure-menu-horizontal">
-    <ul class="pure-menu-list">
-      <li class="pure-menu-item">
-        <a href="/" class="pure-menu-link">Blog</a>
-      </li>
-      <li class="pure-menu-item">
-        <a href="/archives.html" class="pure-menu-link">Archives</a>
-      </li>
-      <li class="pure-menu-item">
-        <a href="/about.html" class="pure-menu-link">About</a>
-      </li>
-    </ul>
-  </div>
+<header class="site-header">
+  <a class="site-brand" href="/">
+    <img src="/images/dragon.png" alt="" class="site-logo">
+    <span class="site-title">mockra</span>
+  </a>
+  <nav class="site-nav">
+    <a href="/">Home</a>
+    <a href="/archive/">Archive</a>
+    <a href="/about.html">About</a>
+  </nav>
 </header>
