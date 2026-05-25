@@ -1,17 +1,15 @@
 ---
 layout: default
 ---
-<div class="content">
-  <section class="post">
-    <header class="post-header">
-      <h3>
-        <a href="{{ post.url }}">{{ page.title }}</a>
-        <small>- {{ page.date | date_to_string }}</small>
-      </h3>
-    </header>
-    <hr/>
-    <div class="post-description">
-      {{ content }}
-    </div>
-  </section>
-</div>
+<article class="post">
+  <header class="post-header">
+    <h1>{{ page.title }}</h1>
+    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+  </header>
+  <div class="post-body">
+    {{ content }}
+  </div>
+  <footer class="post-footer">
+    <a href="/archive/">&larr; Back to archive</a>
+  </footer>
+</article>

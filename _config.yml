@@ -1,7 +1,7 @@
 baseurl: /
 permalink: /:year/:month/:day/:title
-title: Mockra
-url: http://mockra.com
+title: David Ratajczak
+url: https://mockra.com
 markdown: kramdown
 kramdown:
   input: GFM
@@ -13,9 +13,14 @@ plugins:
   - jekyll-feed
   - jekyll-gist
   - jekyll-seo-tag
-logo:
-  /images/dragon.png
-description:
-  The blog of David Ratajczak, a developer focused on the web.
-author:
-  David Ratajczak, david@mockra.com
+  - jekyll-redirect-from
+  - jekyll-sitemap
+logo: /images/dragon.png
+image: /images/dragon.png
+description: David Ratajczak — engineer at GitHub, based in Sacramento.
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /images/dragon.png

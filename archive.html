@@ -1,0 +1,27 @@
+---
+layout: default
+title: Archive
+permalink: /archive/
+redirect_from:
+  - /archives.html
+  - /archive.html
+---
+<section class="archive">
+  <h1 class="display">Archive</h1>
+  <p class="archive-intro">Old posts from 2012&ndash;2017, kept around for posterity.</p>
+
+  {% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+  {% for year in posts_by_year %}
+    <section class="year-group">
+      <h2 class="year">{{ year.name }}</h2>
+      <ul>
+        {% for post in year.items %}
+          <li>
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d" }}</time>
+            <a href="{{ post.url }}">{{ post.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+  {% endfor %}
+</section>
